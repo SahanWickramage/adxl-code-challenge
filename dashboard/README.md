@@ -15,3 +15,11 @@ npm install
 ```
 npm run dev
 ```
+
+## Nav bar and routing
+
+1. Installed react rounter dom dependency
+```
+npm install react-router-dom
+npm install @types/react-router-dom --save-dev
+```
