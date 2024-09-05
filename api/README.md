@@ -76,3 +76,7 @@ npm run start:dev
 npm install mongoose
 npm install mongoose @types/mongoose --save-dev
 ```
+
+## Entity relationship diagram
+
+![erd](./images/erd.png)
