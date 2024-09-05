@@ -1,6 +1,6 @@
 import './App.css'
 import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom'
-import SubmitScanResult from './screens/SubmitScanResult'
+import SubmitScanResult from './screens/submit-scan-result/SubmitScanResult'
 import SecurityScanResultList from './screens/SecurityScanResultList'
 import Home from './screens/Home'
 
