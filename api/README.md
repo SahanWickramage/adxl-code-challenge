@@ -68,3 +68,11 @@ npm install ts-node --save-dev
 ```
 npm run start:dev
 ```
+
+## MongoDB connection
+
+1. Installed mongoose dependencies
+```
+npm install mongoose
+npm install mongoose @types/mongoose --save-dev
+```
