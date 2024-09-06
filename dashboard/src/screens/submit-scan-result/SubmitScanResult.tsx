@@ -4,6 +4,7 @@ import { SecurityScanResult } from '../../types/SecurityScanResult';
 import { SecurityScanFinding } from '../../types/SecurityScanFinding';
 import { parseDate, formatDate } from '../../util/DateUtil';
 import { ScanResultSubmitRequest } from '../../types/ScanResultSubmitRequest';
+import { submit } from '../../services/SecurityScanResultService';
 
 type FormData = {
   securityScanResult: SecurityScanResult;
@@ -28,6 +29,8 @@ function SubmitScanResult() {
             findings: formData.securityScanFindingList
         }
         console.log('submit request', request);
+
+        submit(request);
     }
 
     const handleResultChange = (field: keyof SecurityScanResult) =>
