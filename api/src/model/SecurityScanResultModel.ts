@@ -6,7 +6,8 @@ const securityScanResultSchema = new Schema({
     _id: mongoose.Types.ObjectId,
     status: String,
     repoName: String,
-    queuedAt: Date
+    queuedAt: Date,
+    findingCount: Number
 });
 
 const securityScanResultModel = model<SecurityScanResult>('security-scan-result', securityScanResultSchema);

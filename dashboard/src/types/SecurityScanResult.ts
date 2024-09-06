@@ -1,5 +1,5 @@
 type SecurityScanResult = {
-    _id: string;
+    _id: string | null;
     status: string;
     repoName: string;
     queuedAt: Date;
