@@ -6,4 +6,4 @@ type SecurityScanResult = {
     findingCount: number;
 };
 
-export type {SecurityScanResult};
+export type { SecurityScanResult };
