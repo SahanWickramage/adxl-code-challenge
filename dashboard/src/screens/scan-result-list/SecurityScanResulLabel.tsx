@@ -1,13 +1,8 @@
 import { SecurityScanResult } from "../../types/SecurityScanResult";
 import { Paper, Box, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 function SecurityScanResultLabel(record: SecurityScanResult) {
-    function openSecurityScanFindings(_id: string | null): import("react").MouseEventHandler<HTMLButtonElement> | undefined {
-        // throw new Error("Function not implemented.");
-    }
-
-    
-
     return (
         <Paper elevation={3}>
             <Box padding={2} sx={{backgroundColor: 'gray', margin: 2}}>
@@ -18,7 +13,8 @@ function SecurityScanResultLabel(record: SecurityScanResult) {
                 <Button 
                     variant="contained"
                     color="primary"
-                    onClick={openSecurityScanFindings(record._id)}
+                    component={Link}
+                    to={`/findings/${record._id}`}
                 >View Findings</Button>
             </Box>
         </Paper>
