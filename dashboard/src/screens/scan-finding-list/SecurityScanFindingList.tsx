@@ -1,13 +1,18 @@
-import { SecurityScanFindingRecord } from "../../types/data";
+import { Paper, Box, Typography} from '@mui/material';
+import { useParams } from 'react-router-dom';
 
-function SecurityScanFindingList(record: SecurityScanFindingRecord) {
+type RouteParams = {
+    resultId: string;
+};
+
+function SecurityScanFindingList() {
+    const { resultId } = useParams<RouteParams>();
 
     return (
-        <>
-            <h2>Finding</h2>
-            <p>{record.type}</p>
-            <p>{record.ruleId}</p>
-        </>
+        <Paper>
+            <Typography variant="h4"><b>ResultId: {resultId}</b></Typography>
+            <Box></Box>
+        </Paper>        
     )
 }
 

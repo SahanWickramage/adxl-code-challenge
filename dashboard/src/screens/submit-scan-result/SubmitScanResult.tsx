@@ -5,6 +5,7 @@ import { SecurityScanFinding } from '../../types/SecurityScanFinding';
 import { parseDate, formatDate } from '../../util/DateUtil';
 import { ScanResultSubmitRequest } from '../../types/ScanResultSubmitRequest';
 import { submit } from '../../services/SecurityScanResultService';
+import NavBar from '../../navigation/NavBar';
 
 type FormData = {
   securityScanResult: SecurityScanResult;
@@ -91,6 +92,8 @@ function SubmitScanResult() {
     }
 
     return (
+        <>
+        <NavBar />
         <Paper>
             <Typography variant="h4"><b>Submit Security Scan Result</b></Typography>
             <Box component="form" onSubmit={handleSubmit}>
@@ -192,6 +195,7 @@ function SubmitScanResult() {
                 </Button>
             </Box>
         </Paper>
+        </>
     );
 }
 
