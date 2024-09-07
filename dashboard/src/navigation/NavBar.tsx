@@ -5,10 +5,10 @@ function NavBar() {
     return (
         <AppBar position="static">
             <Toolbar>
-                <Button color="inherit" component={Link} to="/submit">
+                <Button color="inherit" component={Link} to="/submissions">
                     Submit
                 </Button>
-                <Button color="inherit" component={Link} to="/contact">
+                <Button color="inherit" component={Link} to="/results">
                     List
                 </Button>
             </Toolbar>
