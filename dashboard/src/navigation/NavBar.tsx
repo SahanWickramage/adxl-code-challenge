@@ -8,7 +8,7 @@ function NavBar() {
                 <Button color="inherit" component={Link} to="/submit">
                     Submit
                 </Button>
-                <Button color="inherit" component={Link} to="/list">
+                <Button color="inherit" component={Link} to="/contact">
                     List
                 </Button>
             </Toolbar>
