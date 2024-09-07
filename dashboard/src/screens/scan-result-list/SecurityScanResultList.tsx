@@ -1,6 +1,7 @@
 import { Paper, Box, Typography} from '@mui/material';
 import SecurityScanResultLabel from "./SecurityScanResulLabel";
 import { SecurityScanResult } from "../../types/SecurityScanResult";
+import NavBar from '../../navigation/NavBar';
 
 const securityScanResult: SecurityScanResult[] = [
     { _id: "12345", status: "Completed", repoName: "user-service", queuedAt: new Date(), findingCount: 3 },
@@ -9,6 +10,8 @@ const securityScanResult: SecurityScanResult[] = [
 
 function SecurityScanResultList() {
     return (
+        <>
+        <NavBar />
         <Paper>
             <Typography variant="h4"><b>Security Scan Result List</b></Typography>
             <Box>
@@ -24,6 +27,7 @@ function SecurityScanResultList() {
                 ))}
             </Box>
         </Paper>
+        </>
     )
 }
 
