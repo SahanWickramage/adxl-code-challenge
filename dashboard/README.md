@@ -33,4 +33,8 @@ npm install @mui/material @emotion/react @emotion/styled
 
 ## Security scan result submit form
 
-![erd](./images/security-scan-result-submit-form.png)
+![submit-form](./images/security-scan-result-submit-form.png)
+
+## Security scan result list
+
+![result-list](./images/security-scan-result-list.png)
