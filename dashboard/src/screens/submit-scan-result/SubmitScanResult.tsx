@@ -113,9 +113,10 @@ function SubmitScanResult() {
                     />
                     <TextField name="scan-result-queued-at"
                         label="Queued At (yyyy-mm-dd)"
-                        value={formatDate(formData.securityScanResult.queuedAt)}
+                        value={formatDate(new Date())}
                         onChange={handleResultChange('queuedAt')}
                         margin="normal"
+                        disabled={true}
                     />
                 </Box>
 
