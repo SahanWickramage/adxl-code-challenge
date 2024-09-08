@@ -140,7 +140,7 @@ function SubmitScanResult() {
                         margin="normal"
                     />
                         <TextField name="scan-finding-description"
-                        label="Status"
+                        label="Description"
                         value={formData.toBeAddedFinding.description}
                         onChange={handleFindingChange('description')}
                         margin="normal"
