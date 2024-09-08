@@ -9,11 +9,14 @@ import { SecurityScanFindingResponse } from "../types/ScanFindingResponse";
 
 const securityScanFindingRouter = Router();
 
-securityScanFindingRouter.get<{}, ApiResponse, ScanFindingRequest>('/',
-    async (req: Request<{}, ApiResponse, ScanFindingRequest>,
-    res: Response<ApiResponse>) => {
+type ResultIdParams = {
+    resultId: string;
+};
 
-    const resultId: ObjectId = new mongoose.Types.ObjectId(req.body.resultId);
+securityScanFindingRouter.get('/:resultId',
+    async (req: Request<ResultIdParams>, res: Response<ApiResponse>) => {
+
+    const resultId: ObjectId = new mongoose.Types.ObjectId(req.params.resultId);
     const scanFindings = await securityScanFindingModel.find({ securityScanResultId: resultId }).lean<SecurityScanFinding[]>();
 
     const apiResponse: ApiResponse<SecurityScanFindingResponse> = {
