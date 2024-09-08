@@ -2,20 +2,29 @@ import { Paper, Box, Typography} from '@mui/material';
 import SecurityScanResultLabel from "./SecurityScanResulLabel";
 import { SecurityScanResult } from "../../types/SecurityScanResult";
 import NavBar from '../../navigation/NavBar';
-
-const securityScanResult: SecurityScanResult[] = [
-    { _id: "12345", status: "Completed", repoName: "user-service", queuedAt: new Date(), findingCount: 3 },
-    { _id: "67890", status: "In-progress", repoName: "file-service", queuedAt: new Date(1970), findingCount: 5 }
-]
+import { useEffect, useState } from 'react';
+import { listAll } from '../../services/SecurityScanResultService';
 
 function SecurityScanResultList() {
+
+    const [formData, setFormData] = useState<SecurityScanResult[]>([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const data = await listAll();
+            setFormData(data || []);
+        }
+
+        fetchData();
+    }, []);
+
     return (
         <>
         <NavBar />
         <Paper>
             <Typography variant="h4"><b>Security Scan Result List</b></Typography>
             <Box>
-                {securityScanResult.map((result, index) => (
+                {formData.map((result, index) => (
                     <SecurityScanResultLabel
                         key={`scan-result-${index}`}
                         _id={result._id}
