@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  database:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - adxl-code-challenge:/data/db
+
+volumes:
+  adxl-code-challenge: 
