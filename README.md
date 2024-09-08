@@ -18,3 +18,7 @@
 | task12 | Containerize api | Done |
 | task13 | Containerize database | Done |
 | task14 | Compose dashboard, api, and database containers | Done |
+
+## System architecture
+
+![system-architecture](./system-architecture.png)

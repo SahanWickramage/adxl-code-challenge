@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "003d364c-613b-4335-8875-457356f9141c",
+		"name": "adxl-code-challange",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "submit-security-scan-results",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"result\": {\r\n        \"_id\": null,\r\n        \"status\": \"Completed\",\r\n        \"repoName\": \"user-service\",\r\n        \"queuedAt\": \"2024-09-10T10:42:01.970Z\",\r\n        \"findingCount\": 1\r\n    },\r\n    \"findings\": [\r\n        {\r\n            \"type\": \"Security Vulnerability\",\r\n            \"ruleId\": \"SV-12\",\r\n            \"path\": \"src/index.js\",\r\n            \"description\": \"This is a ecurity vulnerability\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3030/api/v1/results",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"api",
+						"v1",
+						"results"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetch-security-scan-results",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3030/api/v1/results",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"api",
+						"v1",
+						"results"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetch-security-scan-findings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3030/api/v1/findings/66dad3bcd80b54b7eb79e67f",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"api",
+						"v1",
+						"findings",
+						"66dad3bcd80b54b7eb79e67f"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

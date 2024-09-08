@@ -80,3 +80,7 @@ npm install mongoose @types/mongoose --save-dev
 ## Entity relationship diagram
 
 ![erd](./images/erd.png)
+
+## Api documentation
+
+![api-documentation](./images/api-documentation.postman_collection.json)

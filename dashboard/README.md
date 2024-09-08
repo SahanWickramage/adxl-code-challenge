@@ -31,10 +31,6 @@ npm install @types/react-router-dom --save-dev
 npm install @mui/material @emotion/react @emotion/styled
 ```
 
-## Security scan result submit form
+## UI mockup
 
-![submit-form](./images/security-scan-result-submit-form.png)
-
-## Security scan result list
-
-![result-list](./images/security-scan-result-list.png)
+![submit-form](./images/ui-mockup.png)
