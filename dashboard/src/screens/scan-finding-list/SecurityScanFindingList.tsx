@@ -3,25 +3,40 @@ import { useParams } from 'react-router-dom';
 import NavBar from '../../navigation/NavBar';
 import SecurityScanFindingLabel from "./SecurityScanFindingLabel";
 import { SecurityScanFinding } from '../../types/SecurityScanFinding';
+import { useEffect, useState } from 'react';
+import { listAllByResultId } from '../../services/SecurityScanFindingService';
 
 type RouteParams = {
     resultId: string;
 };
 
-const securityScanFinding: SecurityScanFinding[] = [
-    {type: 'security vulnerability', ruleId: 'SV-23', path: './src/Form.tsx', description: 'this is a security vulnerability'}
-];
-
 function SecurityScanFindingList() {
     const { resultId } = useParams<RouteParams>();
+
+    const [formData, setFormData] = useState<SecurityScanFinding[]>([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const data = await listAllByResultId(resultId || '');
+                setFormData(data || []);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        if (resultId) {
+            fetchData();
+        }
+    }, []);
 
     return (
         <>
         <NavBar />
         <Paper>
-            <Typography variant="h4"><b>Security Scan Findings List for ResultId: {resultId}</b></Typography>
+            <Typography variant="h4"><b>Security Scan Findings List</b></Typography>
             <Box>
-            {securityScanFinding.map((result, index) => (
+            {formData.map((result, index) => (
                 <SecurityScanFindingLabel
                     key={`scan-finding-${index}`}
                     type={result.type}
