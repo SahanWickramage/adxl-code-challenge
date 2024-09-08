@@ -3,7 +3,7 @@ import { ScanResultSubmitRequest } from "../types/ScanResultSubmitRequest";
 import { SecurityScanResult } from "../types/SecurityScanResult";
 import { SecurityScanResultResponse } from "../types/SecurityScanResultResponse";
 
-const url: string = "http://localhost:3030/api/v1";
+const url: string = process.env.API_URL || "http://localhost:3030/api/v1";
 
 async function submit(submitRequest: ScanResultSubmitRequest) {
     const response = await fetch(`${url}/results`, {

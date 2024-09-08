@@ -2,7 +2,7 @@ import { ApiResponse } from "../types/ApiResponse";
 import { SecurityScanFinding } from "../types/SecurityScanFinding";
 import { SecurityScanFindingResponse } from "../types/SecurityScanFindingResponse";
 
-const url: string = "http://localhost:3030/api/v1";
+const url: string = process.env.API_URL || "http://localhost:3030/api/v1";
 
 async function listAllByResultId(resultId: string) : Promise<SecurityScanFinding[] | undefined> {
     
