@@ -2,6 +2,9 @@ import { Router, Request, Response } from "express";
 import securityScanResultModel from "../model/SecurityScanResultModel";
 import securityScanFindingModel from "../model/SecurityScanFindingModel";
 import { ScanResultSubmitRequest } from "../types/ScanResultSubmitRequest";
+import { SecurityScanResult } from "../types/SecurityScanResult";
+import { SecurityScanResultResponse } from "../types/SecurityScanResultResponse";
+
 import { ApiResponse } from "../types/ApiResponse";
 import mongoose from "mongoose";
 
@@ -43,6 +46,20 @@ securityScanResultRouter.post<{}, ApiResponse, ScanResultSubmitRequest>('/',
     };
 
     res.status(201).send(apiResponse);
+});
+
+securityScanResultRouter.get<{}, ApiResponse, ScanResultSubmitRequest>('/',
+    async (_req: Request<{}, ApiResponse, ScanResultSubmitRequest>,
+    res: Response<ApiResponse>) => {
+
+    const scanResults = await securityScanResultModel.find().lean<SecurityScanResult[]>();
+    const apiResponse: ApiResponse<SecurityScanResultResponse> = {
+        success: true,
+        message: "Security scan results retrieved successfully",
+        data: {securityScanResults: scanResults}
+    };
+
+    res.status(200).send(apiResponse);
 });
 
 export default securityScanResultRouter;
