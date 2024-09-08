@@ -9,7 +9,7 @@ function SecurityScanResultLabel(record: SecurityScanResult) {
                 <p>Status: {record.status}</p>
                 <p>Repository Name: {record.repoName}</p>
                 <p>Queued At: {record.queuedAt.toISOString()}</p>
-                <p>Scam Findings Count: {record.findingCount}</p>
+                <p>Scan Findings Count: {record.findingCount}</p>
                 <Button 
                     variant="contained"
                     color="primary"
