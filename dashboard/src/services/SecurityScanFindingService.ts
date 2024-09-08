@@ -3,7 +3,6 @@ import { SecurityScanFinding } from "../types/SecurityScanFinding";
 import { SecurityScanFindingResponse } from "../types/SecurityScanFindingResponse";
 
 const url: string = process.env.API_URL || "http://localhost:3030/api/v1";
-console.log(`API URL: ${url}`);
 
 async function listAllByResultId(resultId: string) : Promise<SecurityScanFinding[] | undefined> {
     
