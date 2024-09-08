@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const dbUri: string = 'mongodb://localhost:27017/adxl-mdb';
+const dbUri: string = process.env.DB_URI || 'mongodb://localhost:27017/adxl-mdb';
 
 async function connectDB() {
     try {
