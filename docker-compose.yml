@@ -7,6 +7,18 @@ services:
       - 27017:27017
     volumes:
       - adxl-code-challenge:/data/db
+  api:
+    build: ./api
+    ports:
+      - 3030:3030
+    environment:
+      DB_URI: mongodb://database:27017/adxl-mdb
+  dashboard:
+    build: ./dashboard
+    ports:
+      - 80:80
+    environment:
+      API_URL: http://api:3030/api/v1
 
 volumes:
   adxl-code-challenge: 
