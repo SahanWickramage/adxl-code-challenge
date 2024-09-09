@@ -22,3 +22,20 @@
 ## System architecture
 
 ![system-architecture](./system-architecture.png)
+
+## Steps to run the system
+1. `cd` into project directory
+
+2. Execute one of below commands to start
+    1. Command to run only (build happens only during first attempt)
+    ```
+    docker-compose up -d
+    ```
+    2. Command to always build and run
+    ```
+    docker-compose up --build -d
+    ```
+
+2. Execute below command to stop
+```
+docker-compose down
